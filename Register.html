@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: tahoma;
+        }
+
+        .myNav {
+            background-color: #ff9900;
+            width: 100%;
+            overflow: auto;
+        }
+
+        .myNav a {
+            width: 14%;
+            float: left;
+            text-decoration: none;
+            color: white;
+            padding: 8px 5px;
+            font-size: 15pt;
+            text-align: center;
+            height: 40px;
+        }
+
+        .myNav a:hover {
+            background-color: #F60;
+        }
+        :required{
+            outline-color: rgba(255, 0, 0, 0.389);
+        }
+
+        .a {
+            width: 60px;
+            text-align: right;
+        }
+
+        .input {
+            width: 350px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        const check = () => {
+            var Name = document.getElementById("name").value;
+            var sName = /^[A-Za-z ]+$/;
+            if (!sName.test(Name)) {
+                alert("Full name field can't left blank!")
+                document.getElementById("name").focus();
+                return false;
+            }
+            var Diachi = document.getElementById("diachi").value;
+            var sDiachi = /^[A-Za-z0-9 ]+$/;
+            if (!sDiachi.test(Diachi)) {
+                alert("Address field can't left blank!")
+                document.getElementById("diachi").focus();
+                return false;
+            }
+            var Email = document.getElementById("email").value;
+            var sEmail = /^\w+[@]\w+[.]\w{3}([.]\w{2})?$/;
+            if (!sEmail.test(Email)) {
+                alert("Email is not in correct format!")
+                document.getElementById("email").focus();
+                return false;
+            }
+            var Phone = document.getElementById("phone").value;
+            var sPhone = /^\d{8,12}$/;
+            if (!sPhone.test(Phone)) {
+                alert("Phone number must be 8-12 numbers!")
+                document.getElementById("phone").focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="logo">Logo</div>
+        <p>
+        <div class="myNav">
+            <a href="index.html">Hung</a>
+            <a href="">Untilities</a>
+            <a href="">Share</a>
+            <a href="">Knowledge</a>
+            <a href="Register.html">HungDT</a>
+            <a href="">SignIn</a>
+            <a href="">About us</a>
+        </div>
+    </header>
+    <section>
+        <p style="font-size: 20pt; text-align: center;"><b>Register Form</b></p>
+        <hr width="300px">
+        <div align="center">
+            <form action="Hung.html" onsubmit="return check();">
+                <table>
+                    <tr>
+                        <td class="a">Full name:</td>
+                        <td><input type="text" class="input" id="name" autofocus></td>
+                    </tr>
+                    <tr>
+                        <td class="a">Gender:</td>
+                        <td><input type="radio" checked name="sex" id="gender">Male &nbsp; <input name="sex"
+                                type="radio">Female</td>
+                    </tr>
+                    <tr>
+                        <td class="a">Date of Brith:</td>
+                        <td><input type="datetime-local" class="input" id="sinhnhat"></td>
+                    </tr>
+                    <tr>
+                        <td class="a">Address:</td>
+                        <td><input type="text" class="input" id="diachi"></td>
+                    </tr>
+                    <tr>
+                        <td class="a">Email:</td>
+                        <td><input type="text" class="input" id="email" required></td>
+                    </tr>
+                    <tr>
+                        <td class="a">Phone:</td>
+                        <td><input class="input" id="phone" required></td>
+                    </tr>
+                    <tr>
+                        <td class="a">Country</td>
+                        <td>
+                            <select name="" id="" style="width: 350px;height: 25px;">
+                                <option value="">Korea</option>
+                                <option value="">Japan</option>
+                                <option value="" selected>Vietnam</option>
+                                <option value="">Laos</option>
+                                <option value="">Cambodia</option>
+                            </select>
+                        </td>
+                    </tr>        
+                </table>
+                <input type="submit" value="Submit" id="submit" style="width: 100px;">
+                        <input type="reset" value="Reset" style="width: 100px;">
+            </form>
+        </div>
+    </section>
+    <footer>
+        &copy; 2020 By Me. All right reversed
+    </footer>
+</body>
+
+</html>
