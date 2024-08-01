@@ -62,3 +62,7 @@ th a {
 th:hover {
     background-color: #F60;
 }
+.link{
+    text-decoration: none;
+    color: rgb(228, 97, 10);
+}

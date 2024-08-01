@@ -36,6 +36,27 @@
                 document.getElementById("phone").focus();
                 return false;
             }
+            var sinhnhat = document.getElementById("sinhnhat").value;
+            var select = document.getElementById("country");
+            var Country = select.options[select.selectedIndex].text;
+            var Radio = document.getElementsByName("sex");
+            var kq;
+            for(var i=0;i<Radio.length;i++){
+                if(Radio[i].checked){
+                    kq=Radio[i].value;
+                }
+            }
+                alert(
+                "++++++++++++++++++++++++++++"          
+                +"\nName: "+ Name
+                +"\nGender: "+ kq
+                +"\nDate Of Birthday: "+ sinhnhat
+                +"\nAddress: "+Diachi               
+                +"\nMail: "+Email 
+                +"\nPhone: "+ Phone
+                +"\nCountry: "+ Country                  
+                )
+            
         }
     </script>
 </head>
@@ -58,7 +79,7 @@
         <p style="font-size: 20pt; text-align: center;"><b>Register Form</b></p>
         <hr width="300px">
         <div align="center">
-            <form action="index.html" onsubmit="return check();">
+            <form action="" onsubmit="return check();">
                 <table>
                     <tr>
                         <td class="a">Full name:</td>
@@ -66,12 +87,11 @@
                     </tr>
                     <tr>
                         <td class="a">Gender:</td>
-                        <td><input type="radio" checked name="sex" id="gender">Male &nbsp; <input name="sex"
-                                type="radio">Female</td>
+                        <td><input type="radio" checked name="sex" id="male" value="Male">Male &nbsp; <input name="sex" id="female" type="radio" value="Female">Female</td>
                     </tr>
                     <tr>
                         <td class="a">Date of Brith:</td>
-                        <td><input type="datetime-local" class="input" id="sinhnhat"></td>
+                        <td><input type="datetime-local" class="input" id="sinhnhat" required></td>
                     </tr>
                     <tr>
                         <td class="a">Address:</td>
@@ -88,7 +108,7 @@
                     <tr>
                         <td class="a">Country</td>
                         <td>
-                            <select name="" id="" style="width: 350px;height: 25px;">
+                            <select  style="width: 350px;height: 25px;" id="country">
                                 <option value="">Korea</option>
                                 <option value="">Japan</option>
                                 <option value="" selected>Vietnam</option>
@@ -96,13 +116,18 @@
                                 <option value="">Cambodia</option>
                             </select>
                         </td>
-                    </tr>        
+                    </tr>
                 </table>
                 <input type="submit" value="Submit" id="submit" style="width: 100px;">
-                        <input type="reset" value="Reset" style="width: 100px;">
+                <input type="reset" value="Reset" style="width: 100px;">
             </form>
         </div>
     </section>
+<br>
+        <div style="margin-left: 1000px;">
+            <button ><a href="Hung.html" class="link">Home</a></button>
+        </div>
+     
     <footer>
         &copy; 2020 By Me. All right reversed
     </footer>
